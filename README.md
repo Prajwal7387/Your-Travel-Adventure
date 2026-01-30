@@ -29,3 +29,8 @@ This project focuses on clean UI design, smooth navigation, and user-friendly la
 
 ## 📂 Project Structure
 
+📁 Your-Travel-Adventures
+├── index.html
+├── packages.html
+├── contact.html
+└── README.md
