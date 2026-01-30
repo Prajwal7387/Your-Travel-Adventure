@@ -1,121 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Packages - Your Travel Adventures</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #ff7f50;
+            --primary-dark: #e66a3d;
+            --secondary: #f8b400;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f9fbfd;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
+
         header {
-            background: linear-gradient(to right, #ff7f50, #f8b400);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 40px 0;
+            padding: 60px 20px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 0;
+        }
+
         nav {
-            background-color: #ff7f50;
-            padding: 15px 0;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            background: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
+
         nav a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
+            margin: 0 25px;
+            font-size: 1em;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
+
         nav a:hover {
-            color: #ffd700;
+            color: var(--primary);
         }
+
         .packages {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
             text-align: center;
+            margin-bottom: 50px;
         }
+
+        .section-title h2 {
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
         .package {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            position: relative;
+            background: var(--white);
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
+
+        .package:hover {
+            transform: translateY(-5px);
+        }
+
         .package h3 {
             font-size: 1.8em;
-            color: #ff7f50;
-            margin-top: 15px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
         }
+
         .package p {
             font-size: 1em;
-            color: #555;
-            line-height: 1.6;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
+
         .package ul {
             list-style: none;
             padding: 0;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
         }
+
         .package ul li {
-            background: url('https://cdn-icons-png.flaticon.com/512/845/845646.png') no-repeat left center;
-            background-size: 20px;
-            padding-left: 30px;
-            margin: 5px 0;
+            position: relative;
+            padding-left: 35px;
+            color: var(--text-dark);
+            font-weight: 500;
         }
+
+        .package ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            background: rgba(46, 204, 113, 0.1);
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.8em;
+        }
+
+        .details-grid {
+            border-top: 1px solid #eee;
+            padding-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            font-size: 0.9em;
+        }
+
         .book-btn {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ff7f50;
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        .book-btn:hover {
-            background: #f8b400;
-        }
-        footer {
-            background-color: #f8b400;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
             margin-top: 30px;
-        }
-        footer nav a {
+            padding: 15px 40px;
+            background: var(--primary);
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9em;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
         }
-        .social-icons {
-            margin-top: 10px;
+
+        .book-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 127, 80, 0.4);
         }
-        .social-icons a {
+
+        footer {
+            background: var(--text-dark);
             color: white;
-            font-size: 1.2em;
-            margin: 0 10px;
-            transition: transform 0.3s ease;
+            padding: 60px 20px 20px;
+            margin-top: 80px;
         }
-        .social-icons a:hover {
-            transform: scale(1.2);
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
-        .handles {
-            margin-top: 10px;
+
+        footer h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
             font-size: 0.9em;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Our Travel Packages</h1>
@@ -127,8 +244,10 @@
     </nav>
     <main>
         <section class="packages">
-            <h2>Explore Our Packages</h2>
-            
+            <div class="section-title">
+                <h2>Explore Our Epic Journeys</h2>
+            </div>
+
             <div class="package">
                 <h3>Ladakh Adventure - 7 Days</h3>
                 <p><strong>Highlights:</strong></p>
@@ -140,10 +259,12 @@
                     <li>Cross Khardung La Pass</li>
                     <li>Tso Moriri Lake visit & trekking</li>
                 </ul>
-                <p><strong>Inclusions:</strong> Hotel accommodation, meals, guided tours, transport</p>
-                <p><strong>Exclusions:</strong> Airfare, lunches, personal expenses</p>
-                <p><strong>Best Time:</strong> May to September</p>
-                <a href="#" class="book-btn">Book Now</a>
+                <div class="details-grid">
+                    <div><i class="fas fa-hotel"></i> <strong>Inclusions:</strong> Hotel, meals, tours</div>
+                    <div><i class="fas fa-plane-slash"></i> <strong>Exclusions:</strong> Airfare, lunches</div>
+                    <div><i class="fas fa-calendar-alt"></i> <strong>Best Time:</strong> May to Sept</div>
+                </div>
+                <a href="#" class="book-btn">Secure Your Spot</a>
             </div>
 
             <div class="package">
@@ -155,29 +276,47 @@
                     <li>Excursion to Rohtang Pass</li>
                     <li>Kasol visit & Parvati Valley trekking</li>
                 </ul>
-                <p><strong>Inclusions:</strong> Hotel accommodation, meals, guided tours, transport</p>
-                <p><strong>Exclusions:</strong> Airfare, lunches, personal expenses</p>
-                <p><strong>Best Time:</strong> March to June, September to November</p>
-                <a href="#" class="book-btn">Book Now</a>
+                <div class="details-grid">
+                    <div><i class="fas fa-hotel"></i> <strong>Inclusions:</strong> Hotel, meals, tours</div>
+                    <div><i class="fas fa-plane-slash"></i> <strong>Exclusions:</strong> Airfare, lunches</div>
+                    <div><i class="fas fa-calendar-alt"></i> <strong>Best Time:</strong> Mar-June, Sept-Nov</div>
+                </div>
+                <a href="#" class="book-btn">Secure Your Spot</a>
             </div>
-            
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Your Travel Adventures. All Rights Reserved.</p>
-        <nav>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#contact">Contact Us</a>
-        </nav>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/yourpage"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/yourhandle"><i class="fab fa-instagram"></i></a>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p style="color:rgba(255,255,255,0.7); font-size:0.9em;">Epic adventures for every traveler.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="packages.html">Packages</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <div class="footer-column">
+                <h4>Reach Us</h4>
+                <p style="color:rgba(255,255,255,0.7); font-size:0.9em;">info@traveladventures.com</p>
+            </div>
         </div>
-        <div class="handles">
-            <p>Follow us on <strong>Facebook:</strong> @yourpage</p>
-            <p>Follow us on <strong>Instagram:</strong> @yourhandle</p>
+        <div class="copyright">
+            <p>&copy; 2025 Your Travel Adventures. All Rights Reserved.</p>
         </div>
     </footer>
+
 </body>
+
 </html>
